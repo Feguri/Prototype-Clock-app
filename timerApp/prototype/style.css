@@ -40,14 +40,14 @@ h2 {
 
 /* button designs */
 
-button:hover {
+.wrap button:hover {
     cursor: pointer;
     background-color: var(--blue2);
     border-radius: 14px;
     
 }
 
-button {
+.wrap button {
     font-family: "proxima-nova", sans-serif;
     font-weight: 300;
     font-style: normal;
@@ -144,10 +144,28 @@ svg:hover {
     padding: 0.5em;
 }
 
-
-
-
-#ob {
-    overflow: hidden;
-    z-index: 999;
+.centralize {
+    display: flex;
+    justify-content: center;
 }
+
+.play svg {
+    width: 47px;
+    height: 40px;
+    margin-left: 7px;
+}
+
+button {
+    border-radius: 50%;
+    padding: 10px;
+    border: 1px solid var(--blue);
+}
+
+.cls-1 {
+    transition: all 0.2s;
+}
+.play:hover .cls-1 {
+    fill: #4F5F73;
+}
+
+
