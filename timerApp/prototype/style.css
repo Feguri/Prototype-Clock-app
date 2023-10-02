@@ -1,0 +1,153 @@
+:root {
+    --blue: #4F5F73;
+    --white: #F2F2F2;
+    --grey: #A3A9B0;
+    --beige: #CCC4C0;
+    --maroon: #8C4B45;
+    --blue2: #e2e5ee;
+}
+
+body {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: var(--white);
+    color: var(--blue);
+    padding: 50px 200px;
+}
+
+h1 {
+   font-size: 40px;
+}
+
+h2 {
+    padding: 35px 0;
+}
+
+.mb {
+    margin-bottom: 50px;
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+}
+
+.clock {
+    font-size: 50px;
+}
+
+/* button designs */
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--blue2);
+    border-radius: 14px;
+    
+}
+
+button {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
+    border: 1px solid var(--blue);
+    
+    background-color: transparent;
+    padding: 9px 12px;
+    border-radius: 11px;
+    transition: all 0.2s;
+}
+
+.count-down {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hide normal spin buttons for number inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+
+.num-input {
+    text-align: right;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    
+    font-size: 50px;
+    color: var(--blue);
+    
+    border: 1px solid white;
+    
+    width: 70px;
+
+    background-color: transparent;
+    padding: 9px 12px;
+    border-radius: 11px;
+
+    margin-right: 5px;
+    
+    display: inline;
+}
+
+.invisible {
+    color: transparent;
+}
+
+  
+.num-input:hover {
+    background-color: var(--blue2)
+
+}
+
+.num-input:focus-visible {
+    outline: none;
+}
+.num-input:focus {
+    outline: none;
+}
+
+svg {
+    height: 1em;
+    width: 1em;
+    padding: 5px 0;
+}
+svg:hover {
+
+    cursor: pointer;
+}
+
+.arrow-down {
+    transform: rotate(180deg);
+}
+
+.num-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.semicolon {
+    display: block;
+    text-align: center;
+    padding: 0.5em;
+}
+
+
+
+
+#ob {
+    overflow: hidden;
+    z-index: 999;
+}
