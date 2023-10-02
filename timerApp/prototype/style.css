@@ -156,11 +156,22 @@ svg:hover {
 }
 
 button {
-    border-radius: 50%;
+    border-radius: 42%;
     padding: 10px;
     border: 1px solid var(--blue);
+    transition: all .2s;
+    border-color: var(--grey);
 }
 
+button:hover {
+    cursor: pointer;
+    border-radius: 50%;
+    border-color: var(--blue)
+}
+
+.pause {
+    margin-top: 50px;
+}
 .cls-1 {
     transition: all 0.2s;
 }
@@ -168,4 +179,13 @@ button {
     fill: #4F5F73;
 }
 
+svg g /* rect, svg g path*/ {
+    transition: all 0.6s;
+}
 
+
+
+svg .out {
+    transform: translateY(120%);
+    filter: opacity(0);
+}

@@ -35,4 +35,18 @@ for (let btn of document.getElementsByTagName('svg')) {
 
 }
 
+// pause/play button
+let currentState = 'play';
+document.getElementById('playbtn').addEventListener('click', function() {
+
+    if (currentState == 'play') {
+        document.getElementById('pa').classList.remove('out')
+        document.getElementById('pl').classList.add('out')
+        currentState = 'pause';
+    } else {
+        document.getElementById('pa').classList.add('out')
+        document.getElementById('pl').classList.remove('out')
+        currentState = 'play'
+    }
+})
 
