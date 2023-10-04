@@ -67,6 +67,8 @@
                 </form>
                 <button id="down_start">Start</button>
                 <button id="down_stop">Stop</button>
+
+                <p id="showcase">jwqhecfwu</p>
         </section>
     </article>
 
@@ -128,6 +130,9 @@
             }
             document.getElementById("down_s").value = s;
             document.getElementById("down_m").value = m;
+
+            let tmp = m + ":" + s;
+            document.getElementById("showcase").innerHTML = tmp;
 
             if (s == 0 && m == 0) {
                 clearInterval(i);
