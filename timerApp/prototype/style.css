@@ -198,7 +198,23 @@ svg .out {
     filter: opacity(0);
 }
 
+@keyframes padding {
+    0% {
+        padding: 0.2em;
+    }
+    100% {
+        padding: 0.5em;
+    }
+}
 
+@keyframes unpadding {
+    0% {
+        padding: 0.5em;
+    }
+    100% {
+        padding: 0.2em;
+    }
+}
 
 @keyframes hide {
     0% {
