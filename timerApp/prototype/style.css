@@ -77,6 +77,10 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+/* hide it for firefox because the're not like the other girls */
+input[type=number] {
+    -moz-appearance:textfield;
+}
 
 
 .num-input {
