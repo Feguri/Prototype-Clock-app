@@ -37,50 +37,57 @@ for (let btn of document.getElementsByTagName('svg')) {
 
 // pause/play button
 let currentState = 'play';
-function countdownChange(change) {
-    let thingsToChange = document.getElementsByClassName('a');
-    let paddingToChange = document.getElementsByClassName('semicolon')
-    if(change == 'show'){
-        for (let obj of thingsToChange) {
-            obj.classList.add('show');
-            try {
-                obj.classList.remove('hide');
-                setTimeout(function() {obj.style.filter = "opacity(1)";},900);
-            } catch(err) {
 
-            }
-        }
-        for (let obj of paddingToChange) {
-            obj.classList.add('padding');
-            try {
-                obj.classList.remove('unpadding');
-                setTimeout(function() {obj.style.padding = "0.5em";},900);
-            } catch(err) {
-
-            }
+function changeInputFieldBehavior(state) {
+    let inputFields = document.getElementsByTagName('input');
+    if (state == 'play'){
+        for(let input of inputFields){
+            input.style.pointerEvents = 'none';
         }
     } else {
-        for (let obj of thingsToChange) {
-            obj.classList.add('hide');
-            try {
-                obj.classList.remove('show');
-                setTimeout(function() {obj.style.filter = "opacity(0)";},900);
-            } catch(err) {
-                
-            }
+        for(let input of inputFields){
+            input.style.pointerEvents = 'all';
         }
-        for (let obj of paddingToChange) {
-            obj.classList.add('unpadding');
-            try {
-                obj.classList.remove('padding');
-                setTimeout(function() {obj.style.padding = "0.2em";},900);
-            } catch(err) {
 
-            }
+    }
+}
+function decideSetTimeout(info, element){
+    if(info[0] == "filter"){
+        setTimeout(function() {element.style.filter = info[1];},900);
+    } else if(info[0] == "padding") {
+        setTimeout(function() {element.style.padding = info[1];},900);
+    } else if(info[0] == "border-color"){
+        setTimeout(function() {element.style.borderColor = info[1];},900);
+        changeInputFieldBehavior(currentState);
+    }
+}
+function applyAnimation(objArray, toAdd, toRemove, setTimeoutInfo){
+    for (let obj of objArray) {
+        obj.classList.add(toAdd);
+        try {
+            obj.classList.remove(toRemove);
+            decideSetTimeout(setTimeoutInfo, obj);
+        } catch(err) {
+
         }
     }
 }
+function countdownChange(change) {
+    let thingsToChange = document.getElementsByClassName('a');
+    let paddingToChange = document.getElementsByClassName('semicolon')
+    let bordersToChange = document.getElementsByClassName('num-input')
+    if(change == 'show'){ 
+        applyAnimation(thingsToChange, "show", "hide", ["filter", "opacity(1)"]);
+        applyAnimation(paddingToChange, "padding", "unpadding", ["padding", "0.5em"]);
+        applyAnimation(bordersToChange, "border", "unborder", ["border-color", "white"]);
+    } else {
+        applyAnimation(thingsToChange, "hide", "show", ["filter", "opacity(0)"]);
+        applyAnimation(paddingToChange, "unpadding", "padding", ["padding", "0.2em"]);
+        applyAnimation(bordersToChange, "unborder", "border", ["border-color", "transparent"]);
+    }
+}
 
+// play button animation
 document.getElementById('playbtn').addEventListener('click', function() {
 
     if (currentState == 'play') {

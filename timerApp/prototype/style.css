@@ -208,9 +208,37 @@ svg g /* rect, svg g path*/ {
     animation-duration: 1s;
 }
 
+
 svg .out {
     transform: translateY(120%);
     filter: opacity(0);
+}
+
+.border {
+    animation: border;
+    animation-duration: 1s;
+}
+.unborder {
+    animation: unborder;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes border {
+    0% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: white;
+    }
+}
+@keyframes unborder {
+    0% {
+        border-color: white;
+    }
+    100% {  
+        border-color: transparent;
+    }
 }
 
 @keyframes padding {
