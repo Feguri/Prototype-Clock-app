@@ -14,6 +14,8 @@ body {
     background-color: var(--white);
     color: var(--blue);
     padding: 50px 200px;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 h1 {
@@ -94,7 +96,7 @@ input[type=number] {
     
     border: 1px solid white;
     
-    width: 70px;
+    width: 60px;
 
     background-color: transparent;
     padding: 9px 12px;
@@ -197,6 +199,15 @@ svg g /* rect, svg g path*/ {
     animation-iteration-count: 1;
 }
 
+.padding {
+    animation: padding;
+    animation-duration: 1s;
+}
+.unpadding {
+    animation: unpadding;
+    animation-duration: 1s;
+}
+
 svg .out {
     transform: translateY(120%);
     filter: opacity(0);
@@ -231,9 +242,36 @@ svg .out {
 
 @keyframes show {
     0% {
-        opacity: 0;
+        filter: opacity(0);
     }
     100% {
-        opacity: 1;
+        filter: opacity(1);
     }
+}
+
+/*  Responsive Grid Media Queries - 1280, 1024, 768, 480
+*   1280-1024   - desktop (default grid)
+*   1024-768    - tablet landscape
+*   768-480     - tablet 
+*   480-less    - phone landscape & smaller
+* --------------------------------------------
+*/
+@media all and (min-width: 1024px) and (max-width: 1280px) { }
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    body{
+        padding: 35px 100px;
+    } 
+ }
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+    body{
+        padding: 25px 50px;
+    } 
+}
+
+@media all and (max-width: 480px) { 
+    body{
+        padding: 5px 10px;
+    } 
 }

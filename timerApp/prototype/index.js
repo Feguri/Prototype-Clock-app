@@ -39,11 +39,22 @@ for (let btn of document.getElementsByTagName('svg')) {
 let currentState = 'play';
 function countdownChange(change) {
     let thingsToChange = document.getElementsByClassName('a');
+    let paddingToChange = document.getElementsByClassName('semicolon')
     if(change == 'show'){
         for (let obj of thingsToChange) {
             obj.classList.add('show');
             try {
                 obj.classList.remove('hide');
+                setTimeout(function() {obj.style.filter = "opacity(1)";},900);
+            } catch(err) {
+
+            }
+        }
+        for (let obj of paddingToChange) {
+            obj.classList.add('padding');
+            try {
+                obj.classList.remove('unpadding');
+                setTimeout(function() {obj.style.padding = "0.5em";},900);
             } catch(err) {
 
             }
@@ -56,6 +67,15 @@ function countdownChange(change) {
                 setTimeout(function() {obj.style.filter = "opacity(0)";},900);
             } catch(err) {
                 
+            }
+        }
+        for (let obj of paddingToChange) {
+            obj.classList.add('unpadding');
+            try {
+                obj.classList.remove('padding');
+                setTimeout(function() {obj.style.padding = "0.2em";},900);
+            } catch(err) {
+
             }
         }
     }
