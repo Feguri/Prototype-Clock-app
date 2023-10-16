@@ -162,7 +162,7 @@ svg:hover {
 }
 
 button {
-    border-radius: 42%;
+    border-radius: 15px;
     padding: 10px;
     border: 1px solid var(--blue);
     transition: all .2s;
@@ -171,8 +171,9 @@ button {
 
 button:hover {
     cursor: pointer;
-    border-radius: 50%;
-    border-color: var(--blue)
+    border-radius: 18px;
+    border-color: var(--blue);
+    background-color: var(--blue2);
 }
 
 .pause {
@@ -224,6 +225,28 @@ svg .out {
     animation-iteration-count: 1;
 }
 
+#clock svg {
+    height: 27em;
+    width: 27em;
+}
+#clock svg rect {
+    transform-origin: 50% 50%;
+}
+
+#digital {
+    font-size: 40px;
+    text-align: center;
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#analogue {
+    display: flex;
+    justify-content: center;
+}
 @keyframes border {
     0% {
         border-color: transparent;
