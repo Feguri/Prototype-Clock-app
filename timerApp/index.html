@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="prototype/index.js" defer></script>
     <title>Timer App Sample</title>
 
     <link rel="stylesheet" href="prototype/style.css">
@@ -221,13 +221,152 @@
         <h2>Countdown Timer</h2>
         <section id="down_form">
                 <form action="">
-                    <input type="number" name="down_m" id="down_m" value="0"> :
-                    <input type="number" name="down_s" id="down_s" value="10">
+                    <div class="count-down">
+                        <div class="num-container">
+                
+                            
+                            <svg class="show a" version="1.1" id="hu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                            <style type="text/css">
+                                .in0{fill: #A3A9B0;}
+                                .in1{fill:white; filter: opacity(0);}
+                                .in1:hover ~ .in0, .in0:hover { fill: #4F5F73; transition: 0.2s all;}
+                                
+                            </style>
+                            <g>
+                            <rect y="14.71" class="in1" width="99.21" height="63.28"/>
+                                <path class="in0" d="M21.83,58.65l26.09-24.06c1.19-1.09,3.01-1.09,4.2,0l26.09,24.06l5,5c0.58,0.58,1.37,0.91,2.19,0.91h0
+                                    c2.82,0,4.17-3.46,2.1-5.37L52.12,26.56c-1.19-1.09-3.01-1.09-4.2,0L12.54,59.19c-2.07,1.91-0.72,5.37,2.1,5.37h0
+                                    c0.82,0,1.61-0.33,2.19-0.91L21.83,58.65z"/>
+                            </g>
+                            </svg>
+                       
+                            <div>
+                                <input class="num-input" id="down_h" type="number" name="down_m"value="59">h
+                            </div>
+                
+                            <svg class="arrow-down show a" version="1.1" id="hd" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                            <style type="text/css">
+                                .in0{fill: #A3A9B0;}
+                                .in1{fill:white; filter: opacity(0);}
+                                .in1:hover ~ .st0, .st0:hover { fill: #4F5F73; transition: 0.2s all;}
+                                
+                            </style>
+                            <g>
+                            <rect y="14.71" class="in1" width="99.21" height="63.28"/>
+                                <path class="in0" d="M21.83,58.65l26.09-24.06c1.19-1.09,3.01-1.09,4.2,0l26.09,24.06l5,5c0.58,0.58,1.37,0.91,2.19,0.91h0
+                                    c2.82,0,4.17-3.46,2.1-5.37L52.12,26.56c-1.19-1.09-3.01-1.09-4.2,0L12.54,59.19c-2.07,1.91-0.72,5.37,2.1,5.37h0
+                                    c0.82,0,1.61-0.33,2.19-0.91L21.83,58.65z"/>
+                            </g>
+                            </svg>
+                
+                        </div>
+                        <span  class="semicolon">:</span>
+                        <div class="num-container">
+                
+                            <svg class="show a" version="1.1" id="mu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                            <style type="text/css">
+                                .in0{fill: #A3A9B0;}
+                                .in1{fill:white; filter: opacity(0);}
+                                .in1:hover ~ .st0, .st0:hover { fill: #4F5F73; transition: 0.2s all;}
+                                
+                            </style>
+                            <g id="t">
+                            <rect y="14.71" class="in1" width="99.21" height="63.28"/>
+                                <path class="in0" d="M21.83,58.65l26.09-24.06c1.19-1.09,3.01-1.09,4.2,0l26.09,24.06l5,5c0.58,0.58,1.37,0.91,2.19,0.91h0
+                                    c2.82,0,4.17-3.46,2.1-5.37L52.12,26.56c-1.19-1.09-3.01-1.09-4.2,0L12.54,59.19c-2.07,1.91-0.72,5.37,2.1,5.37h0
+                                    c0.82,0,1.61-0.33,2.19-0.91L21.83,58.65z"/>
+                            </g>
+                            </svg>
+                            <div>
+                                <input class="num-input" type="number" id="down_m" name="down_m" value="59">m
+                            </div>
+                            <svg class="arrow-down show a" version="1.1" id="md" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                            <style type="text/css">
+                                .in0{fill: #A3A9B0;}
+                                .in1{fill:white; filter: opacity(0);}
+                                .in1:hover ~ .in0, .in0:hover { fill: #4F5F73; transition: 0.2s all;}
+                                
+                            </style>
+                            <g id="t">
+                            <rect y="14.71" class="in1" width="99.21" height="63.28"/>
+                                <path class="in0" d="M21.83,58.65l26.09-24.06c1.19-1.09,3.01-1.09,4.2,0l26.09,24.06l5,5c0.58,0.58,1.37,0.91,2.19,0.91h0
+                                    c2.82,0,4.17-3.46,2.1-5.37L52.12,26.56c-1.19-1.09-3.01-1.09-4.2,0L12.54,59.19c-2.07,1.91-0.72,5.37,2.1,5.37h0
+                                    c0.82,0,1.61-0.33,2.19-0.91L21.83,58.65z"/>
+                            </g>
+                            </svg>
+                
+                        </div>
+                        <span class="semicolon">:</span>
+                        <div class="num-container">
+                
+                            <svg class="show a" version="1.1" id="su" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                            <style type="text/css">
+                                .in0{fill: #A3A9B0;}
+                                .in1{fill:white; filter: opacity(0);}
+                                .in1:hover ~ .st0, .st0:hover { fill: #4F5F73; transition: 0.2s all;}
+                                
+                            </style>
+                            <g id="t">
+                            <rect y="14.71" class="in1" width="99.21" height="63.28"/>
+                                <path class="in0" d="M21.83,58.65l26.09-24.06c1.19-1.09,3.01-1.09,4.2,0l26.09,24.06l5,5c0.58,0.58,1.37,0.91,2.19,0.91h0
+                                    c2.82,0,4.17-3.46,2.1-5.37L52.12,26.56c-1.19-1.09-3.01-1.09-4.2,0L12.54,59.19c-2.07,1.91-0.72,5.37,2.1,5.37h0
+                                    c0.82,0,1.61-0.33,2.19-0.91L21.83,58.65z"/>
+                            </g>
+                            </svg>
+                            <div>
+                                <input class="num-input" type="number" id="down_s" name="down_s"  value="59">s 
+                            </div>
+                            <svg class="arrow-down show a" version="1.1" id="sd" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                            <style type="text/css">
+                                .in0{fill: #A3A9B0;}
+                                .in1{fill:white; filter: opacity(0);}
+                                .in1:hover ~ .st0, .st0:hover { fill: #4F5F73; transition: 0.2s all;}
+                                
+                            </style>
+                            <g id="t">
+                            <rect y="14.71" class="in1" width="99.21" height="63.28"/>
+                                <path class="in0" d="M21.83,58.65l26.09-24.06c1.19-1.09,3.01-1.09,4.2,0l26.09,24.06l5,5c0.58,0.58,1.37,0.91,2.19,0.91h0
+                                    c2.82,0,4.17-3.46,2.1-5.37L52.12,26.56c-1.19-1.09-3.01-1.09-4.2,0L12.54,59.19c-2.07,1.91-0.72,5.37,2.1,5.37h0
+                                    c0.82,0,1.61-0.33,2.19-0.91L21.83,58.65z"/>
+                            </g>
+                            </svg>
+                    
+                        </div>
+                         
+                    </div>
                 </form>
-                <button id="down_start">Start</button>
-                <button id="down_stop">Stop</button>
 
-                <p id="showcase">jwqhecfwu</p>
+                <div class="centralize">
+                    <button type="button" title="Play button" class="play" id="down_start">
+                        <!-- play -->
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72.12 81.94">
+                            <defs>
+                              <style>
+                                .button {
+                                  fill: #A3A9B0;
+                                  stroke-miterlimit: 10;
+                                }
+                              </style>
+                            </defs>
+                            <g id="pl">
+                            <path class="button" d="m69.7,37.65L6.25,1.02C3.7-.46.5,1.39.5,4.34v73.26c0,2.95,3.2,4.8,5.75,3.32l63.45-36.63c2.56-1.48,2.56-5.17,0-6.64Z"/>
+                                </g>
+            
+                                    <g id="pa" class="out">
+                                        <rect class="cls-1" x=".5" y="5" width="15.6" height="76.68" rx="5.57" ry="5.57"/>
+                                        <rect class="cls-1" x="43.53" y="5" width="15.6" height="76.68" rx="5.57" ry="5.57"/>
+                                </g>
+                              </svg>
+                            </div>
+                </button>
+                </div>
+                
         </section>
     </article>
     </div>
@@ -273,6 +412,7 @@
 //    window.setInterval(clockF,1000);
 
     //COUNT DOWN
+    let started = true;
     let countdown = function () {
         let s = document.getElementById("down_s").value;
         let m = document.getElementById("down_m").value;
@@ -303,14 +443,16 @@
         };
 
         document.getElementById("down_start").addEventListener("click", function() {
-            i = setInterval(tick, 1000);
-        });
-        document.getElementById("down_stop").addEventListener("click", function() {
-            clearInterval(i);
+            if (started) {
+                i = setInterval(tick, 1000);
+                started = false;
+            } else {
+                clearInterval(i);
+                started = true;
+            }
+            
         });
         
-
-
     };
     countdown();
 
@@ -353,9 +495,12 @@
 
     //NAVIGATION
     let ui = function () {
+        let changeTime = 200;
         let c = document.getElementById("clock");
         let d = document.getElementById("countdown");
         let w = document.getElementById("stopwatch");
+
+        let currentDisplay = c;
 
         let C = document.getElementById("nav_clock");
         let D = document.getElementById("nav_down");
@@ -366,19 +511,45 @@
         w.style.display = "none";
 
         C.addEventListener("click", function () {
-            c.style.display = "block";
-            d.style.display = "none";
-            w.style.display = "none";
+            currentDisplay.classList.add('hide2');
+            currentDisplay = c;
+            const myTimeout = setTimeout(change, changeTime);
+            
+            function change() {
+                c.style.display = "block";
+                c.classList.remove('hide2')
+                c.classList.add('show2');
+                d.style.display = "none";
+                w.style.display = "none";
+            }
+
         });
         D.addEventListener("click", function () {
-            c.style.display = "none";
-            d.style.display = "block";
-            w.style.display = "none";
+            currentDisplay.classList.add('hide2');
+            currentDisplay = d;
+            const myTimeout = setTimeout(change, changeTime);
+
+            function change() {
+                c.style.display = "none";
+                d.style.display = "block";
+                d.classList.remove('hide2')
+                d.classList.add('show2');
+                w.style.display = "none";
+            }
+
         });
         W.addEventListener("click", function () {
-            c.style.display = "none";
-            d.style.display = "none";
-            w.style.display = "block";
+            currentDisplay.classList.add('hide2');
+            const myTimeout = setTimeout(change, changeTime);
+            currentDisplay = w;
+            function change() {
+                c.style.display = "none";
+                d.style.display = "none";
+                w.style.display = "block";
+                w.classList.remove('hide2')
+                w.classList.add('show2');
+            }
+
         });
     };
     ui();

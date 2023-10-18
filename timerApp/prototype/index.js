@@ -88,7 +88,7 @@ function countdownChange(change) {
 }
 
 // play button animation
-document.getElementById('playbtn').addEventListener('click', function() {
+document.getElementById('down_start').addEventListener('click', function() {
 
     if (currentState == 'play') {
         document.getElementById('pa').classList.remove('out')

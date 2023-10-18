@@ -13,7 +13,7 @@ body {
     font-style: normal;
     background-color: var(--white);
     color: var(--blue);
-    padding: 50px 200px;
+    padding: 0px 200px;
     -webkit-user-select: none;
     user-select: none;
 }
@@ -23,7 +23,7 @@ h1 {
 }
 
 h2 {
-    padding: 35px 0;
+    padding: 10px 0;
 }
 
 .mb {
@@ -124,13 +124,16 @@ input[type=number] {
     outline: none;
 }
 
+#down_start {
+    border-radius: 50%;
+}
+
 svg {
     height: 1em;
     width: 1em;
     padding: 5px 0;
 }
-svg:hover {
-
+.a:hover {
     cursor: pointer;
 }
 
@@ -200,6 +203,19 @@ svg g /* rect, svg g path*/ {
     animation-iteration-count: 1;
 }
 
+.show2 {
+    animation: show;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.hide2 {
+    animation: hide;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
 .padding {
     animation: padding;
     animation-duration: 1s;
@@ -226,14 +242,15 @@ svg .out {
 }
 
 #clock svg {
-    height: 27em;
-    width: 27em;
+    height: 18em;
+    width: 18em;
 }
 #clock svg rect {
     transform-origin: 50% 50%;
 }
 
 #digital {
+    padding-top: 20px;
     font-size: 40px;
     text-align: center;
 }
