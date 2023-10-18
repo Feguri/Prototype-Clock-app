@@ -185,7 +185,11 @@ button:hover {
 .cls-1 {
     transition: all 0.2s;
 }
-.play:hover .cls-1 {
+
+.button {
+    transition: all 0.2s;
+}
+.play:hover .button {
     fill: #4F5F73;
 }
 
