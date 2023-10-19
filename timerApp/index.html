@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src="prototype/index.js" defer></script>
     <title>Timer App Sample</title>
 
@@ -24,12 +25,23 @@
 
     <header>
         <h1>Timely</h1>
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+        <style type="text/css">
+            .st0{fill:#4F5F73;}
+        </style>
+        <g>
+            <path class="st0" d="M344.74,71l-97.26,125.46L150.22,71H344.74 M247.48,300.54L344.74,426H150.22L247.48,300.54 M386.9,9H108.05
+                C70.57,9,47.14,39.22,65.88,63.4l143.49,185.1L65.88,433.6c-18.74,24.18,4.69,54.4,42.17,54.4H386.9
+                c37.49,0,60.92-30.22,42.17-54.4L285.59,248.5L429.08,63.4C447.82,39.22,424.39,9,386.9,9L386.9,9z"/>
+        </g>
+        </svg>
     </header>
     
-    <nav>
-        <button id="nav_clock">Clock</button>
-        <button id="nav_down">Countdown Timer</button>
-        <button id="nav_watch">Stop Watch</button>
+    <nav class="buttons-nav">
+        <button class="navbtn selected" id="nav_clock">Clock</button>
+        <button class="navbtn "id="nav_down">Countdown Timer</button>
+        <button class="navbtn "id="nav_watch">Stop Watch</button>
     </nav>
 
     <article id="clock">
@@ -242,7 +254,7 @@
                             </svg>
                        
                             <div>
-                                <input class="num-input" id="down_h" type="number" name="down_m"value="59">h
+                                <input class="num-input" id="down_h" type="number" name="down_m"value="0">h
                             </div>
                 
                             <svg class="arrow-down show a" version="1.1" id="hd" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -281,7 +293,7 @@
                             </g>
                             </svg>
                             <div>
-                                <input class="num-input" type="number" id="down_m" name="down_m" value="59">m
+                                <input class="num-input" type="number" id="down_m" name="down_m" value="0">m
                             </div>
                             <svg class="arrow-down show a" version="1.1" id="md" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
@@ -319,7 +331,7 @@
                             </g>
                             </svg>
                             <div>
-                                <input class="num-input" type="number" id="down_s" name="down_s"  value="59">s 
+                                <input class="num-input" type="number" id="down_s" name="down_s"  value="0">s 
                             </div>
                             <svg class="arrow-down show a" version="1.1" id="sd" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
@@ -374,13 +386,66 @@
     <article id="stopwatch">
         <h2>Stop watch</h2>
         <section id="watch_form">
-                <form action="">
-                    <input type="number" name="watch_m" id="watch_m" value="0"> :
-                    <input type="number" name="watch_s" id="watch_s" value="0">
+                <form class="stopwatch-form centralize" action="">
+                    <div class="mr">
+                        <input class="num-input" id="watch_m" type="number" name="watch_m" value="0">m
+                        <input class="num-input" type="number" name="watch_s" id="watch_s" value="0">s
+                        <input class="num-input minifont2" type="number" name="watch_ms" id="watch_ms" value="0"><span class="minifont">ms</span> 
+                    </div>
                 </form>
-                <button id="watch_start">Start</button>
-                <button id="watch_stop">Pause</button>
-                <button id="watch_reset">Reset</button>
+                <div class="centralize">
+                    <button type="button" title="Play button" class="play" id="watch_start">
+                        <!-- play -->
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72.12 81.94">
+                            <defs>
+                              <style>
+                                .button {
+                                  fill: #A3A9B0;
+                                  stroke-miterlimit: 10;
+                                }
+                              </style>
+                            </defs>eset
+                            <g id="watch-pl">
+                            <path class="button" d="m69.7,37.65L6.25,1.02C3.7-.46.5,1.39.5,4.34v73.26c0,2.95,3.2,4.8,5.75,3.32l63.45-36.63c2.56-1.48,2.56-5.17,0-6.64Z"/>
+                                </g>
+            
+                                <g id="watch-pa" class="out button">
+                                    <rect class="cls-1" x=".5" y="5" width="15.6" height="76.68" rx="5.57" ry="5.57"/>
+                                    <rect class="cls-1" x="43.53" y="5" width="15.6" height="76.68" rx="5.57" ry="5.57"/>
+                                </g>
+                              </svg>
+                            </div>
+                </button>
+                </div>
+                <div class="centralize mt">
+                    <button id="watch_reset">
+                    <svg class="rotate-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.ro0{fill:none;stroke:#4F5F73;stroke-width:62;stroke-miterlimit:10;}
+	.ro1{fill:#4F5F73;}
+</style>
+<g>
+	<path class="ro0" d="M120.11,218.45"/>
+</g>
+<g>
+	<path class="ro1" d="M125.19,183.37c21.89-47.52,69.96-80.59,125.62-80.59s103.73,33.07,125.62,80.59h55.52
+		c-9.07-28.63-24.93-54.87-46.78-76.72C349.28,70.76,301.56,51,250.81,51s-98.46,19.76-134.35,55.65
+		c-21.85,21.85-37.71,48.09-46.78,76.72H125.19z"/>
+	<path class="ro1" d="M376.43,298.63c-21.89,47.52-69.96,80.59-125.62,80.59s-103.73-33.07-125.62-80.59H69.68
+		c9.07,28.64,24.93,54.87,46.78,76.72c35.89,35.89,83.6,55.65,134.35,55.65s98.46-19.76,134.35-55.65
+		c21.85-21.85,37.71-48.09,46.78-76.72H376.43z"/>
+</g>
+<path class="ro1" d="M204.97,325.7c3.04-7.82-0.82-16.62-8.64-19.66L77.59,259.79l-0.21,0.54l-0.54-0.21L30.59,378.86
+	c-3.04,7.82,0.82,16.62,8.64,19.66h0c7.82,3.04,16.62-0.82,19.66-8.64l29.92-76.83c3.04-7.82,11.85-11.68,19.66-8.64l76.83,29.92
+	C193.12,337.38,201.93,333.51,204.97,325.7L204.97,325.7z"/>
+<path class="ro1" d="M296.09,159.75c-2.81,7.9,1.31,16.59,9.21,19.4l120.04,42.75l0.2-0.55l0.55,0.2l42.75-120.04
+	c2.81-7.9-1.31-16.59-9.21-19.4l0,0c-7.9-2.81-16.59,1.31-19.4,9.21l-27.66,77.67c-2.81,7.9-11.5,12.03-19.4,9.21l-77.67-27.66
+	C307.59,147.73,298.91,151.85,296.09,159.75L296.09,159.75z"/>
+</svg>
+                </button>
+                </div>
+                
         </section>
     </article>
 
@@ -465,35 +530,49 @@
     countdown();
 
     //STOP WATCH
+    let clickedPause = false;
     let watch = function () {
         let s = document.getElementById("watch_s").value;
         let m = document.getElementById("watch_m").value;
+        let ms = document.getElementById("watch_ms").value;
         let i;
         
         let tick = function () {
             s = document.getElementById("watch_s").value;
             m = document.getElementById("watch_m").value;
-            if (s == 59) {
-                s = 0;
-                m++;
+            ms = document.getElementById("watch_ms").value;
+            if (ms >= 99) {
+                if (s >= 59) {
+                    m++;
+                    s = 0;
+                    ms = 0;
+                }else {
+                    s++;
+                    ms = 0;
+                }
+
             }
-            else {
-                s++;
-            }
+            ms++;
             document.getElementById("watch_s").value = s;
             document.getElementById("watch_m").value = m;
+            document.getElementById("watch_ms").value = ms;
 
         };
 
         document.getElementById("watch_start").addEventListener("click", function() {
-            i = setInterval(tick, 1000);
+            if (clickedPause){
+                clearInterval(i);
+                clickedPause = false;
+            } else {
+                i = setInterval(tick, 10);
+                clickedPause = true;
+            }
         });
-        document.getElementById("watch_stop").addEventListener("click", function() {
-            clearInterval(i);
-        });
+
         document.getElementById("watch_reset").addEventListener("click", function() {
             document.getElementById("watch_s").value = 0;
             document.getElementById("watch_m").value = 0;
+            document.getElementById("watch_ms").value = 0;
             //clearInterval(i);
         });
 
@@ -503,6 +582,8 @@
 
     //NAVIGATION
     let ui = function () {
+        let allBtns = document.getElementsByClassName('navbtn');
+
         let changeTime = 200;
         let c = document.getElementById("clock");
         let d = document.getElementById("countdown");
@@ -518,7 +599,16 @@
         d.style.display = "none";
         w.style.display = "none";
 
+
         C.addEventListener("click", function () {
+
+            for (let btn of allBtns){
+                console.log(btn)
+                btn.classList.remove('selected')
+            }
+            this.classList.add('selected')
+
+            currentSelection = 'clock'
             currentDisplay.classList.add('hide2');
             currentDisplay = c;
             const myTimeout = setTimeout(change, changeTime);
@@ -533,6 +623,12 @@
 
         });
         D.addEventListener("click", function () {
+            for (let btn of allBtns){
+                console.log(btn)
+                btn.classList.remove('selected')
+            }
+            this.classList.add('selected')
+
             currentDisplay.classList.add('hide2');
             currentDisplay = d;
             const myTimeout = setTimeout(change, changeTime);
@@ -547,6 +643,12 @@
 
         });
         W.addEventListener("click", function () {
+            for (let btn of allBtns){
+                console.log(btn)
+                btn.classList.remove('selected')
+            }
+            this.classList.add('selected')
+
             currentDisplay.classList.add('hide2');
             const myTimeout = setTimeout(change, changeTime);
             currentDisplay = w;

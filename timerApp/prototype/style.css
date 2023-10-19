@@ -18,12 +18,33 @@ body {
     user-select: none;
 }
 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+header svg {
+    width: 30px;
+    height: 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
 h1 {
    font-size: 40px;
 }
 
 h2 {
     padding: 10px 0;
+    text-align: center;
 }
 
 .mb {
@@ -62,6 +83,15 @@ h2 {
     transition: all 0.2s;
 }
 
+.selected {
+    background-color: #4F5F73;
+    color: white;
+}
+.selected:hover {
+    background-color: #617886;
+    color: white;
+}
+
 .count-down {
     font-family: "proxima-nova", sans-serif;
     font-weight: 300;
@@ -70,6 +100,20 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.mt {
+    margin-top: 30px;
+}
+
+.rotate-icon {
+    width: 60px;
+    height: 50px;
+}
+
+#watch_reset {
+    border-radius: 50%;
+    transform: scale(0.7);
 }
 
 /* Hide normal spin buttons for number inputs */
@@ -116,6 +160,22 @@ input[type=number] {
     background-color: var(--blue2)
 
 }
+.mr {
+    margin-right: 41px;
+}
+#watch_ms {
+    width: 40px;
+}
+.minifont {
+    font-size: 20px;
+}
+.minifont2 {
+    font-size: 30px;
+}
+
+.stopwatch-form {
+    font-size: 40px;
+}
 
 .num-input:focus-visible {
     outline: none;
@@ -124,8 +184,9 @@ input[type=number] {
     outline: none;
 }
 
-#down_start {
+#down_start, #watch_start {
     border-radius: 50%;
+    margin-top: 50px;
 }
 
 svg {

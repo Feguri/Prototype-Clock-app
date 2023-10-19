@@ -8,6 +8,8 @@ function jump(e, o) {
 }
 
 
+
+
 for (let btn of document.getElementsByTagName('svg')) {
     btn.addEventListener('click', function() {
 
@@ -107,3 +109,21 @@ document.getElementById('down_start').addEventListener('click', function() {
     }
 })
 
+// Playbtn animation
+document.getElementById('watch_start').addEventListener('click', function() {
+    if (currentState == 'play') {
+        document.getElementById('watch-pa').classList.remove('out')
+        document.getElementById('watch-pl').classList.add('out')
+
+        // function to change the countdown timer's appearance
+        countdownChange('hide')
+        currentState = 'pause';
+    } else {
+        document.getElementById('watch-pa').classList.add('out')
+        document.getElementById('watch-pl').classList.remove('out')
+
+        // function to change the countdown timer's appearance
+        countdownChange('show')
+        currentState = 'play'
+    }
+})
