@@ -1,0 +1,25 @@
+#Layer_2{
+    width: 50px;
+    height: 50px;
+}
+#Layer_3{
+    width: 100px;
+    height: 100px;
+}
+#Layer_4{
+    width: 150px;
+    height: 150px;
+}
+.animate {
+    animation-name: animation;
+    animation-duration: 2s;
+}
+
+@keyframes animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
